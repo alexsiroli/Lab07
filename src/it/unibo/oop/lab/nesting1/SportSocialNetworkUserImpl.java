@@ -112,9 +112,7 @@ public class SportSocialNetworkUserImpl<U extends User> extends SocialNetworkUse
      */
     
     public void addSport(final Sport sport) {
-    	if (!this.hasSport(sport)) {
-    		this.sports.add(sport);
-    	}
+    	this.sports.add(sport);
     }
 
     /**
@@ -126,10 +124,7 @@ public class SportSocialNetworkUserImpl<U extends User> extends SocialNetworkUse
      */
 
     public boolean hasSport(final Sport s) {
-    	if (this.sports.contains(s)) {
-    		return true;
-    	}
-        return false;
+    	return (this.sports.contains(s));
     }
 
     /*
