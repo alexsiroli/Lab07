@@ -33,7 +33,7 @@ public class SportSocialNetworkUserImpl<U extends User> extends SocialNetworkUse
      * add a field to keep track of the set of sports followed/done by a user
      */
 
-	private static HashSet<Sport> sports;
+	private final HashSet<Sport> sports = new HashSet<>();
 	
     /**
      * Builds a new {@link SportSocialNetworkUserImpl}.
@@ -83,7 +83,7 @@ public class SportSocialNetworkUserImpl<U extends User> extends SocialNetworkUse
      */
     // TODO
     public void addSport(final Sport sport) {
-    	SportSocialNetworkUserImpl.sports.add(sport);
+    	this.sports.add(sport);
     }
 
     /**
@@ -95,6 +95,6 @@ public class SportSocialNetworkUserImpl<U extends User> extends SocialNetworkUse
      * @return true if the user likes sport s
      */
     public boolean hasSport(final Sport s) {
-        return (SportSocialNetworkUserImpl.sports.contains(s));
+        return (this.sports.contains(s));
     }
 }
